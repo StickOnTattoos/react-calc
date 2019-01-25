@@ -7,12 +7,15 @@ export default function ProductListItem(props) {
             height={100}
             title={props.product.name}
             src={`/products/${props.product.image}`}
+            alt={props.product.id}
             
         />
         <div>{props.product.description}</div>
         <div>${props.product.price}</div>
         <div>
-            <button>Add to Cart</button>
+            <button
+                onClick={() => props.addToCart(props.product)}
+            >Add to Cart</button>
         </div>
     </div>
 }
